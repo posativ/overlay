@@ -54,13 +54,9 @@ src_compile()
 	export GOROOT_FINAL="${EPREFIX}"/usr/lib/go
 	export GOROOT="$(pwd)"
 	export GOBIN="${GOROOT}/bin"
-	if [[ $CTARGET = armv5* ]]
-	then
-		export GOARM=5
-	fi
 
 	cd src
-	./make.bash || die "build failed"
+	env GOARCH=arm ./make.bash || die "build failed"
 	cd ..
 
 	if use emacs; then
@@ -77,7 +73,9 @@ src_test()
 
 src_install()
 {
-	dobin bin/*
+	dobin bin/{go,gofmt}
+	newbin bin/linux_arm/go go-linux-arm
+	newbin bin/linux_arm/gofmt go-fmt-linux-arm
 	dodoc AUTHORS CONTRIBUTORS PATENTS README
 
 	dodir /usr/lib/go
