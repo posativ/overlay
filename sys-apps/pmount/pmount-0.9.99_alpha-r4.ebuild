@@ -1,9 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pmount/pmount-0.9.99_alpha-r2.ebuild,v 1.1 2013/09/25 07:23:50 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pmount/pmount-0.9.99_alpha-r4.ebuild,v 1.1 2014/04/18 18:19:51 mgorny Exp $
 
 EAPI=5
-inherit eutils user
+inherit eutils user bash-completion-r1
 
 DESCRIPTION="Policy based mounter that gives the ability to mount removable devices as a user"
 HOMEPAGE="http://pmount.alioth.debian.org/"
@@ -68,6 +68,10 @@ src_install () {
 
 	insinto /etc
 	doins etc/pmount.{allow,conf}
+
+	keepdir /media #501772
+
+	newbashcomp "${FILESDIR}/${PN}.bash-completion" "${PN}"
 }
 
 pkg_postinst() {
