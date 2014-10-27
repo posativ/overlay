@@ -16,11 +16,10 @@ LICENSE="Apache-2.0"
 SLOT="${PV}"
 KEYWORDS="~x86 ~amd64"
 
-DEPEND="app-arch/zip
-	app-admin/eselect-gradle"
+DEPEND="app-arch/zip"
 RDEPEND=">=virtual/jdk-1.5"
 
-IUSE="source doc examples"
+IUSE="+doc examples source"
 
 S="${WORKDIR}/${MY_P}"
 
