@@ -64,13 +64,5 @@ src_install() {
 		java-pkg_newjar ${jar} ${jar}
 	done
 
-	java-pkg_dolauncher "${P}" --main org.gradle.launcher.GradleMain --java_args "-Dgradle.home=${gradle_dir}/lib \${GRADLE_OPTS}"
-}
-
-pkg_postinst() {
-	eselect gradle update ifunset
-}
-
-pkg_postrm() {
-	eselect gradle update ifunset
+	java-pkg_dolauncher gradle --main org.gradle.launcher.GradleMain --java_args "-Dgradle.home=${gradle_dir}/lib \${GRADLE_OPTS}"
 }
