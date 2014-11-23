@@ -9,7 +9,7 @@ DESCRIPTION="123 weather themed icons inspired by Font Awesome and ready for Boo
 HOMEPAGE="http://erikflowers.github.io/weather-icons/"
 SRC_URI="https://github.com/erikflowers/${PN}/archive/master.zip"
 
-LICENSE="SIL OFL 1.1"
+LICENSE="OFL-1.1"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""

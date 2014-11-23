@@ -24,8 +24,8 @@ fi
 LICENSE="GPL-2"
 SLOT="2"
 KEYWORDS="~amd64 ~x86"
-IUSE_PLUGINS="frotz irc jabber purple skype sms twitter yahoo"
-IUSE="debug doc libev mysql postgres sqlite test ${IUSE_PLUGINS}"
+IUSE_PLUGINS="frotz jabber purple skype sms twitter yahoo"
+IUSE="debug doc mysql postgres sqlite test ${IUSE_PLUGINS}"
 
 RDEPEND="${RDEPEND}
 	dev-libs/libev
@@ -36,10 +36,8 @@ RDEPEND="${RDEPEND}
 	mysql? ( virtual/mysql )
 	postgres? ( dev-libs/libpqxx )
 	sqlite? ( dev-db/sqlite:3 )
-	irc? ( net-im/communi )
 	purple? ( >=net-im/pidgin-2.6.0 )
 	skype? ( dev-libs/dbus-glib x11-base/xorg-server[xvfb] net-im/skype )
-	libev? ( dev-libs/libev )
 	"
 
 DEPEND="${RDEPEND}
