@@ -5,9 +5,12 @@
 EAPI=5
 inherit font
 
+MY_PV="1.2.0"
+MY_PN="${PN}-${MY_PV}"
+
 DESCRIPTION="123 weather themed icons inspired by Font Awesome and ready for Bootstrap"
 HOMEPAGE="http://erikflowers.github.io/weather-icons/"
-SRC_URI="https://github.com/erikflowers/${PN}/archive/master.zip"
+SRC_URI="https://github.com/erikflowers/${PN}/archive/v${MY_PV}.zip"
 
 LICENSE="OFL-1.1"
 SLOT="0"
@@ -17,6 +20,6 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN}-master"
+S="${WORKDIR}/${MY_PN}"
 FONT_SUFFIX="ttf otf"
 FONT_S="${S}/fonts"
