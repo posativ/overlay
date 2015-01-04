@@ -14,11 +14,10 @@ HOMEPAGE="https://github.com/LemonBoy/bar"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+doc"
+IUSE=""
 
 DEPEND="
 	x11-libs/libxcb
-	doc? ( dev-lang/perl )
 "
 RDEPEND="${DEPEND}"
 
