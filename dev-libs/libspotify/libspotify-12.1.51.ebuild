@@ -31,7 +31,7 @@ src_prepare() {
 	elif use amd64; then
 		S="${WORKDIR}/${P}-Linux-x86_64-release"
 	else
-		ewarn "Arch nocht supported"
+		ewarn "Arch not supported"
 		die 1
 	fi
 }
