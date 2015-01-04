@@ -1,1 +1,5 @@
-Do not use.
+This is my personal overlay.  Feel free to make use of it, but I can't promise
+the long-term stability of anything within.
+
+Mostly version bumps, several binary releases (with a ridiculous dep graph) and
+several utils not packaged yet.
