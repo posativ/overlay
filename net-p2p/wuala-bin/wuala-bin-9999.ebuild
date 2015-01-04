@@ -4,6 +4,8 @@
 
 EAPI=4
 
+MY_PN=${PN%%-bin}
+
 DESCRIPTION="Wuala, your free online hard-disk"
 HOMEPAGE="http://wuala.com/"
 SRC_URI="http://cdn.wuala.com/repo/other/wuala.tar.gz"
@@ -15,7 +17,7 @@ IUSE=""
 DEPEND=""
 RDEPEND=">=virtual/jre-1.6.0"
 
-S="${WORKDIR}"/"${PN}"
+S="${WORKDIR}"/"${MY_PN}"
 
 src_install() {
 	dodir /opt/bin
