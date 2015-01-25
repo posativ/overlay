@@ -4,9 +4,7 @@
 
 EAPI=5
 
-# radicale also supports python3_{2,3}
-# but python-ldap, dulwich and flup are blocking here
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 PYTHON_REQ_USE="ssl?"
 
 inherit distutils-r1 user
@@ -21,12 +19,9 @@ SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="fastcgi git ldap mysql sqlite postgres ssl"
+IUSE="mysql sqlite postgres ssl"
 
 RDEPEND="
-	fastcgi? ( dev-python/flup[${PYTHON_USEDEP}] )
-	git? ( dev-python/dulwich[${PYTHON_USEDEP}] )
-	ldap? ( dev-python/python-ldap[${PYTHON_USEDEP}] )
 	mysql? ( dev-python/sqlalchemy[${PYTHON_USEDEP}]
 		dev-python/mysql-python[${PYTHON_USEDEP}] )
 	sqlite? ( dev-python/sqlalchemy[${PYTHON_USEDEP},sqlite] )
