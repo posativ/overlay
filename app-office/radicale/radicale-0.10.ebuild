@@ -63,10 +63,8 @@ python_install_all() {
 	insinto /etc/${PN}
 	doins config logging
 
-	# fcgi and wsgi files
 	insinto /usr/share/${PN}
 	doins radicale.wsgi
-	use fastcgi && doins radicale.fcgi
 
 	distutils-r1_python_install_all
 }
@@ -74,5 +72,4 @@ python_install_all() {
 pkg_postinst() {
 	einfo "Radicale now supports WSGI."
 	einfo "A sample wsgi-script has been put into ${ROOT}usr/share/${PN}."
-	use fastcgi && einfo "You will also find there an example fcgi-script."
 }
