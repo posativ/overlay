@@ -7,7 +7,7 @@ EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 PYTHON_REQ_USE="ssl?"
 
-inherit distutils-r1 user
+inherit distutils-r1 user systemd
 
 MY_PN="Radicale"
 MY_P="${MY_PN}-${PV}"
@@ -49,8 +49,8 @@ python_install_all() {
 	# delete the useless .rst, so that it is not installed
 	rm README.rst
 
-	# init file
-	newinitd "${FILESDIR}"/radicale.init.d radicale
+	# systemd init file
+	systemd_newunit "${FILESDIR}"/radicale.service radicale.service
 
 	# directories
 	diropts -m0750
