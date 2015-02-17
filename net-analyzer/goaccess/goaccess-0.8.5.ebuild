@@ -1,18 +1,18 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
 EAPI=5
 
-AUTOTOOLS_AUTORECONF=1
-inherit autotools-utils
+inherit autotools eutils
 
-DESCRIPTION="A real-time Apache log analyzer and interactive viewer that runs in a terminal"
+DESCRIPTION="A real-time web log analyzer and interactive viewer that runs in a terminal"
 HOMEPAGE="http://goaccess.io"
 SRC_URI="http://tar.goaccess.io/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux"
+KEYWORDS="~amd64 ~x86"
 IUSE="geoip unicode"
 
 RDEPEND="
@@ -20,19 +20,17 @@ RDEPEND="
 	sys-libs/ncurses[unicode?]
 	geoip? ( dev-libs/geoip )
 "
-DEPEND="${RDEPEND}
+DEPEND="
+	${RDEPEND}
 	virtual/pkgconfig
 "
 
-src_configure() {
-	# configure does not properly recognise '--disable-something'
-	local myeconfargs=(
-		$(usex geoip '--enable-geoip' '' '' '')
-		$(usex unicode '--enable-utf8' '' '' '')
-	)
-	autotools-utils_src_configure
+src_prepare() {
+	epatch "${FILESDIR}"/geoip-config.patch
 }
 
-src_compile() {
-	autotools-utils_src_compile CFLAGS="${CFLAGS}"
+src_configure() {
+	econf \
+		$(use_enable geoip) \
+		$(use_enable unicode utf8)
 }
