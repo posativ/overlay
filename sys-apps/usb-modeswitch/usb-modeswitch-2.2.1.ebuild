@@ -15,5 +15,6 @@ IUSE=""
 
 DEPEND="
 	virtual/libusb:1
-	sys-apps/usb-modeswitch-data"
+	sys-apps/usb-modeswitch-data
+	dev-lang/tcl"
 RDEPEND="${DEPEND}"
