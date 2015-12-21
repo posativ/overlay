@@ -35,7 +35,7 @@ fi
 IUSE="avahi debug doc examples +expat qt4 ssl static-libs zeroconf"
 
 RDEPEND="
-	dev-libs/boost
+	=dev-libs/boost-1.55.0-r2
 	expat? ( dev-libs/expat )
 	!expat? ( dev-libs/libxml2 )
 	ssl? ( dev-libs/openssl )

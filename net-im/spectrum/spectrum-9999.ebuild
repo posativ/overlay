@@ -12,12 +12,12 @@ inherit cmake-utils versionator ${VCS_ECLASS}
 DESCRIPTION="Spectrum is a XMPP transport/gateway"
 HOMEPAGE="http://spectrum.im"
 if [[ ${PV} == *9999* ]]; then
-	EGIT_REPO_URI="git://github.com/hanzz/libtransport.git"
+	EGIT_REPO_URI="git://github.com/hanzz/spectrum2.git"
 else
 	MY_PN="spectrum"
 	MY_PV=$(replace_version_separator '_' '-')
 	MY_P="${MY_PN}-${MY_PV}"
-	SRC_URI="https://github.com/downloads/hanzz/libtransport/${MY_P}.tar.gz"
+	SRC_URI="https://github.com/downloads/hanzz/spectrum2/${MY_P}.tar.gz"
 	S="${WORKDIR}/${MY_P}"
 fi
 
@@ -28,11 +28,13 @@ IUSE_PLUGINS="frotz jabber purple skype sms twitter yahoo"
 IUSE="debug doc mysql postgres sqlite test ${IUSE_PLUGINS}"
 
 RDEPEND="${RDEPEND}
+	=dev-libs/boost-1.55.0-r2
 	dev-libs/libev
 	dev-libs/log4cxx
 	dev-libs/openssl
 	dev-libs/popt
 	dev-libs/protobuf
+	net-im/swift
 	mysql? ( virtual/mysql )
 	postgres? ( dev-libs/libpqxx )
 	sqlite? ( dev-db/sqlite:3 )
