@@ -3,7 +3,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
+EAPI="5"
 
 [[ ${PV} = *9999* ]] && VCS_ECLASS="git-2" || VCS_ECLASS=""
 
@@ -28,7 +28,7 @@ IUSE_PLUGINS="frotz jabber purple skype sms twitter yahoo"
 IUSE="debug doc mysql postgres sqlite test ${IUSE_PLUGINS}"
 
 RDEPEND="${RDEPEND}
-	=dev-libs/boost-1.55.0-r2
+	dev-libs/boost:0/1.55.0
 	dev-libs/libev
 	dev-libs/log4cxx
 	dev-libs/openssl

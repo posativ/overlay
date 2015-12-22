@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
 LANGS=" ca de es fr hu nl pl ru se sk"
 
@@ -35,7 +35,7 @@ fi
 IUSE="avahi debug doc examples +expat qt4 ssl static-libs zeroconf"
 
 RDEPEND="
-	=dev-libs/boost-1.55.0-r2
+	dev-libs/boost:0/1.55.0
 	expat? ( dev-libs/expat )
 	!expat? ( dev-libs/libxml2 )
 	ssl? ( dev-libs/openssl )
