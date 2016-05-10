@@ -279,20 +279,18 @@ MY_FORTUNES="holenlassen
 
 
 src_compile() {
-	# bug #322111 (via fortune-mod-at-linux)
-	for fortune in $MY_FORTUNES; do
-		# iconv --from-code=ISO-8859-1 --to-code=UTF-8 data/$fortune > data/${fortune}-utf8
-		# mv data/${fortune}-utf8 data/$fortune
-		strfile -s data/$fortune
+	for fortune in ${MY_FORTUNES}; do
+		strfile -s data/${fortune}
+		# ... are the same file
+		mv data/${fortune} data/${fortune//\//-} 2>/dev/null
+		mv data/${fortune}.dat data/${fortune//\//-}.dat 2>/dev/null
 	done
+
+	mv data de
 }
 
 src_install() {
-	insinto /usr/share/fortune/de
-	for fortune in $MY_FORTUNES; do
-		# actually +unicode is required, but this package is broken anyways
-		doins data/$fortune data/${fortune}.dat
-	done
-
+	insinto /usr/share/fortune
+	doins -r de
 	dodoc AUTHORS COPYING NEWS README
 }
