@@ -1,0 +1,298 @@
+EAPI=5
+DESCRIPTION="Collection of more than 17000 German cookies."
+HOMEPAGE="http://fam-tille.de/"
+SRC_URI="mirror://debian/pool/main/${PN:0:1}/${PN}/${PN}_${PV}.orig.tar.gz"
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="amd64"
+IUSE=""
+
+RDEPEND="games-misc/fortune-mod
+	virtual/libiconv"
+
+# LOL
+MY_FORTUNES="holenlassen
+	murphy
+	channel-debian.fortunes
+	zitate/fussball
+	zitate/galletti
+	zitate/mencken
+	zitate/france
+	zitate/h
+	zitate/shakespeare
+	zitate/brandt
+	zitate/clemenceau
+	zitate/churchill
+	zitate/e
+	zitate/erhardt
+	zitate/chesterton
+	zitate/heraklit
+	zitate/ibsen
+	zitate/heine
+	zitate/nestroy
+	zitate/guitry
+	zitate/boell
+	zitate/gide
+	zitate/graff
+	zitate/wilde
+	zitate/twain
+	zitate/brudzinski
+	zitate/t
+	zitate/pestalozzi
+	zitate/kennedy
+	zitate/n
+	zitate/friedrich
+	zitate/kafka
+	zitate/weber
+	zitate/beutelrock
+	zitate/hebbel
+	zitate/cocteau
+	zitate/kant
+	zitate/loriot
+	zitate/kraus
+	zitate/diderot
+	zitate/paul
+	zitate/bacon
+	zitate/kleist
+	zitate/aristoteles
+	zitate/tolstoj
+	zitate/ringelnatz
+	zitate/moreau
+	zitate/laub
+	zitate/pascal
+	zitate/huxley
+	zitate/jaspers
+	zitate/schiller
+	zitate/rousseau
+	zitate/chamfort
+	zitate/grillparzer
+	zitate/hope
+	zitate/shaw
+	zitate/feuchtersleben
+	zitate/picasso
+	zitate/knigge
+	zitate/epikur
+	zitate/p
+	zitate/j
+	zitate/k
+	zitate/buck
+	zitate/schnitzler
+	zitate/emerson
+	zitate/presse
+	zitate/l
+	zitate/lessing
+	zitate/kishon
+	zitate/m
+	zitate/tucholsky
+	zitate/d
+	zitate/bamm
+	zitate/sagan
+	zitate/ford
+	zitate/baudelaire
+	zitate/ruehmann
+	zitate/dali
+	zitate/voltaire
+	zitate/busch
+	zitate/einstein
+	zitate/frisch
+	zitate/swift
+	zitate/lincoln
+	zitate/b
+	zitate/polgar
+	zitate/cicero
+	zitate/horaz
+	zitate/aquin
+	zitate/brecht
+	zitate/kaye
+	zitate/deschner
+	zitate/ustinov
+	zitate/z
+	zitate/euripides
+	zitate/helvetius
+	zitate/hesse
+	zitate/vinci
+	zitate/internet
+	zitate/giraudoux
+	zitate/herder
+	zitate/ovid
+	zitate/faulkner
+	zitate/beauvoir
+	zitate/s
+	zitate/gandhi
+	zitate/aurel
+	zitate/hassencamp
+	zitate/humboldtw
+	zitate/bruyere
+	zitate/konfuzius
+	zitate/schmidt
+	zitate/camus
+	zitate/duerrenmatt
+	zitate/gorkij
+	zitate/joubert
+	zitate/fontane
+	zitate/seume
+	zitate/o
+	zitate/pelzig
+	zitate/feuerbach
+	zitate/guareschi
+	zitate/demokrit
+	zitate/hauptmann
+	zitate/hauschka
+	zitate/w
+	zitate/goethe
+	zitate/mitscherlich
+	zitate/doderer
+	zitate/nahr
+	zitate/boerne
+	zitate/montesquieu
+	zitate/bauer
+	zitate/miller
+	zitate/welles
+	zitate/balzac
+	zitate/allen
+	zitate/lichtenberg
+	zitate/bierce
+	zitate/hemingway
+	zitate/eschenbach
+	zitate/hoelderlin
+	zitate/nietzsche
+	zitate/spinoza
+	zitate/steinbeck
+	zitate/laotse
+	zitate/canetti
+	zitate/vauvenargues
+	zitate/kierkegaard
+	zitate/machiavelli
+	zitate/f
+	zitate/claudius
+	zitate/lec
+	zitate/maugham
+	zitate/hildebrandt
+	zitate/rueckert
+	zitate/teresa
+	zitate/adenauer
+	zitate/q
+	zitate/freud
+	zitate/at
+	zitate/saint-exupery
+	zitate/renard
+	zitate/qualtinger
+	zitate/v
+	zitate/waggerl
+	zitate/napoleon
+	zitate/wilder
+	zitate/luther
+	zitate/mailer
+	zitate/giono
+	zitate/santayana
+	zitate/lembke
+	zitate/weizsaecker
+	zitate/carlyle
+	zitate/unbekannt
+	zitate/moravia
+	zitate/u
+	zitate/franklin
+	zitate/talleyrand
+	zitate/stramke
+	zitate/schweitzer
+	zitate/c
+	zitate/marcuse
+	zitate/russell
+	zitate/kaestner
+	zitate/petan
+	zitate/bismarck
+	zitate/goethe_maximen
+	zitate/professoren
+	zitate/sokrates
+	zitate/novalis
+	zitate/y
+	zitate/montaigne
+	zitate/hugo
+	zitate/lewis
+	zitate/mitsch
+	zitate/rosegger
+	zitate/seneca
+	zitate/tati
+	zitate/a
+	zitate/silone
+	zitate/sartre
+	zitate/weizenbaum
+	zitate/morgenstern
+	zitate/tschopp
+	zitate/r
+	zitate/goetz
+	zitate/rochefoucauld
+	zitate/i
+	zitate/uhlenbruck
+	zitate/schopenhauer
+	zitate/x
+	zitate/musil
+	zitate/g
+	zitate/gasset
+	zitate/parkinson
+	zitate/valentin
+	unfug
+	huhn
+	witze/gemischt
+	witze/fraumann
+	witze/eriwan
+	witze/restaurant
+	witze/jurist
+	witze/beamte
+	witze/armee
+	witze/ostfriesen
+	witze/politisch
+	witze/stottern
+	witze/arzt
+	witze/fuszball
+	translations
+	linuxtag/linuxtag
+	quiz
+	woerterbuch
+	computer/allgemein
+	computer/airlines
+	computer/bier
+	sprueche
+	vornamen
+	asciiart
+	stilblueten
+	sprichwortev
+	anekdoten
+	loewe
+	infodrom/infodrom
+	infodrom/linux.de
+	mathematiker
+	wusstensie
+	regeln
+	tips
+	bahnhof
+	sicherheitshinweise
+	debian
+	gedichte
+	lieberals
+	sprichworte
+	ms
+	elefanten
+	kinderzitate
+	letzteworte"
+
+
+src_compile() {
+	# bug #322111 (via fortune-mod-at-linux)
+	for fortune in $MY_FORTUNES; do
+		# iconv --from-code=ISO-8859-1 --to-code=UTF-8 data/$fortune > data/${fortune}-utf8
+		# mv data/${fortune}-utf8 data/$fortune
+		strfile -s data/$fortune
+	done
+}
+
+src_install() {
+	insinto /usr/share/fortune/de
+	for fortune in $MY_FORTUNES; do
+		# actually +unicode is required, but this package is broken anyways
+		doins data/$fortune data/${fortune}.dat
+	done
+
+	dodoc AUTHORS COPYING NEWS README
+}
