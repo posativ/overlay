@@ -12,7 +12,7 @@ MY_PN=${PN%%-bin-debian}
 
 DESCRIPTION="Chromium build from Debian unstable"
 HOMEPAGE="http://packages.debian.org/sid/chromium"
-SRC_URI="mirror://debian/pool/main/${PN:0:1}/${PN:0:8}-browser/${PN:0:8}_${MY_PV}~${MY_R}_amd64.deb"
+SRC_URI="http://security.debian.org/pool/updates/main/${PN:0:1}/${PN:0:8}-browser/${PN:0:8}_${MY_PV}~${MY_R}_amd64.deb"
 
 LICENSE="BSD"
 SLOT="0"
