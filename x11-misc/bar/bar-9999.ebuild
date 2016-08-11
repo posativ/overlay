@@ -3,30 +3,23 @@
 # $Header: $
 
 EAPI=5
-
 inherit git-r3
 
-EGIT_REPO_URI="https://github.com/LemonBoy/bar.git"
-
-DESCRIPTION="Lightweight xcb based bar."
+DESCRIPTION="bar is a lightweight bar based entirely on XCB."
 HOMEPAGE="https://github.com/LemonBoy/bar"
+EGIT_REPO_URI="https://github.com/LemonBoy/bar"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="
-	x11-libs/libxcb
-"
+DEPEND="x11-libs/libxcb"
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	make all
-	make doc
+	emake STRIP=/bin/true
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-	doman bar.1
+	emake DESTDIR="${D}" PREFIX=/usr install
 }
