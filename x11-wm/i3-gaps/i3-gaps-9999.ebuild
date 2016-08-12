@@ -10,7 +10,7 @@ DESCRIPTION="i3-gaps – i3 with more features"
 HOMEPAGE="http://i3wm.org/"
 SRC_URI=""
 EGIT_REPO_URI="git://github.com/Airblader/i3"
-EGIT_BRANCH="next"
+EGIT_BRANCH="gaps"
 
 LICENSE="BSD"
 SLOT="0"
