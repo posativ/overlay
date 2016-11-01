@@ -22,12 +22,8 @@ KEYWORDS="~amd64"
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	append-libs include/
-}
-
 src_compile() {
-	emake
+	emake -j 1
 }
 
 src_install() {
