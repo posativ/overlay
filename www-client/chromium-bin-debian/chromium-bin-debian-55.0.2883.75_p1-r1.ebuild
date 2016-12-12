@@ -36,6 +36,7 @@ RDEPEND="
 	media-libs/freetype
 	>=media-libs/libjpeg-turbo-1.3.1
 	media-libs/harfbuzz
+	media-libs/libpng:1.2
 	media-libs/libvpx
 	media-libs/speex
 	>=media-sound/pulseaudio-2.0
