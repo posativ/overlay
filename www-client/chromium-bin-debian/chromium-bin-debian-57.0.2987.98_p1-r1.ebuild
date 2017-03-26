@@ -75,7 +75,7 @@ src_install() {
 		mv "${D}"/usr/{lib,"${libdir}"} || die
 	}
 
-	echo jessie > "${D}"/etc/debian_version || die
+	echo stretch > "${D}"/etc/debian_version || die
 
 	# Link to Flash (not in RDEPEND)
 	local flash_plugin_dir=/usr/${libdir}/firefox/plugins
