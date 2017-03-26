@@ -38,7 +38,7 @@ RDEPEND="
 	media-libs/harfbuzz
 	media-libs/libpng:1.2
 	media-libs/libvpx
-	media-libs/libwebp
+	>=media-libs/libwebp-0.5.1
 	media-libs/speex
 	>=media-sound/pulseaudio-2.0
 	<net-libs/libsrtp-1.5
