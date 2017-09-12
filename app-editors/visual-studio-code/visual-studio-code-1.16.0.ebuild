@@ -14,13 +14,13 @@ SRC_URI="
 	"
 RESTRICT="mirror strip"
 
-LICENSE="EULA MIT"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="
-	>=media-libs/libpng-1.2.46
+	>=media-libs/libpng-1.2.46:1.2
 	>=x11-libs/gtk+-2.24.8-r1:2
 	x11-libs/cairo
 	gnome-base/gconf
@@ -34,11 +34,11 @@ RDEPEND="
 	x11-libs/libXScrnSaver
 "
 
-ARCH=$(getconf LONG_BIT)
-
-[[ ${ARCH} == "64" ]] && S="${WORKDIR}/VSCode-linux-x64" || S="${WORKDIR}/VSCode-linux-ia32"
-
 QA_PRESTRIPPED="opt/${PN}/code"
+
+pkg_setup(){
+	use amd64 && S="${WORKDIR}/VSCode-linux-x64" || S="${WORKDIR}/VSCode-linux-ia32"
+}
 
 src_install(){
 	pax-mark m code
@@ -46,7 +46,7 @@ src_install(){
 	doins -r *
 	dosym "/opt/${PN}/bin/code" "/usr/bin/${PN}"
 	make_desktop_entry "${PN}" "Visual Studio Code" "${PN}" "Development;IDE"
-	doicon ${FILESDIR}/${PN}.png
+	doicon "${FILESDIR}/${PN}.png"
 	fperms +x "/opt/${PN}/code"
 	fperms +x "/opt/${PN}/bin/code"
 	fperms +x "/opt/${PN}/libnode.so"

@@ -13,7 +13,7 @@ else
 fi
 
 DESCRIPTION="tool to convert Android sparse images to raw images"
-HOMEPAGE=""
+HOMEPAGE="https://github.com/anestisb/android-simg2img"
 
 LICENSE="Apache-2.0"
 SLOT="0"
