@@ -51,14 +51,13 @@ src_compile() { emake slock; }
 
 src_install() {
 	dobin slock
+	doman slock.1
+
+	fperms u+s /usr/bin/slock
+
 	save_config config.h
 }
 
 pkg_postinst() {
-	# cap_dac_read_search used to be enough for shadow access
-	# but now slock wants to write to /proc/self/oom_score_adj
-	# and for that it needs:
-	fcaps cap_dac_override,cap_sys_resource /usr/bin/slock
-
 	savedconfig_pkg_postinst
 }
